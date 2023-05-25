@@ -1,0 +1,17 @@
+.sidebar{
+    width: 256px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#detail{
+    flex: 1;
+    background-color: #ebecf0;
+}
+
+.main-icon{
+    font-size: 30px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px 0;
+}
