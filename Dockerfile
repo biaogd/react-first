@@ -1,3 +1,4 @@
-FROM nginx:latest
+FROM node:18.12.0
 
-COPY dist /usr/share/nginx/html
+RUN apt update
+RUN apt install -y yarn 

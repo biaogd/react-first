@@ -5,11 +5,11 @@ import {
     CommentOutlined
 } from '@ant-design/icons'
 
-export const menuData = [
+const menuData = [
     {
         "name":"首页",
         "key":"main_page",
-        "icon": <HomeOutlined />
+        "icon": <HomeOutlined />,
     },
     {
         "name":"产品管理",
@@ -69,3 +69,16 @@ export const menuData = [
         ]
     }
 ]
+
+const menuRoutes = [
+    {
+        "key":"main_page",
+        "path":"/home"
+    },
+    {
+        "key":"product_list",
+        "path":"/product/productmgmt/list"
+    }
+]
+
+export {menuData, menuRoutes}
