@@ -77,7 +77,8 @@ const menuRoutes = [
     },
     {
         "key":"product_list",
-        "path":"/product/productmgmt/list"
+        "path":"/product/productmgmt/list",
+        "openKey":"product_management"
     }
 ]
 
