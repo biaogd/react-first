@@ -1,0 +1,17 @@
+
+.header-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 60px;
+    background-color: #001628;
+    padding: 10px 20px;
+    color: white;
+}
+
+.header-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

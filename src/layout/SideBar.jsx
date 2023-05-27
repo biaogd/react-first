@@ -1,32 +1,32 @@
 import { Outlet } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { menuData, menuRoutes } from '../mock/data'
-import { Menu } from 'antd'
+import { Menu, Breadcrumb } from 'antd'
 import './SideBar.css'
 import { useNavigate } from 'react-router-dom'
+import HeaderBar  from './HeaderBar'
+import MainContent from './MainContent'
 
 export default function SideBar() {
 
-    const [items, setItems] = useState([]);
+    const items = useMemo(()=>{
+        let dd = []
+        getMenuItem(menuData, dd);
+        return dd;
+    }, [menuData])
     const nav = useNavigate();
     let [activeKey, setActiveKey] = useState("")
     let [clickKey, setClickKey] = useState("");
     let [openKey, setOpenKey] = useState([])
 
-    useEffect(() => {
-        let dd = []
-        getMenuItem(menuData, dd);
-        setItems(dd);
-        console.log(dd);
-        const pathname = location.pathname;
-        menuRoutes.forEach(it => {
-            if (pathname == it.path) {
-                setActiveKey(it.key);
-                console.log(pathname)
-                setOpenKey(it.openKey ? [it.openKey] : [])
-            }
-        })
-    }, []);
+    const breadItems = [
+        {
+            "title":"产品管理"
+        },
+        {
+            "title":"产品列表"
+        }
+    ]
 
     useEffect(() => {
         const pathname = location.pathname;
@@ -47,6 +47,7 @@ export default function SideBar() {
                 <Menu
                     mode="inline"
                     items={items}
+                    theme="dark"
                     activeKey={activeKey}
                     selectedKeys={[activeKey]}
                     openKeys={openKey.length>0 ? openKey : undefined}
@@ -67,7 +68,9 @@ export default function SideBar() {
                 />
             </div>
             <div id='detail'>
-                <Outlet />
+                <HeaderBar/>
+                <Breadcrumb className='head-bread-crumb' items={breadItems} />
+                <MainContent/>
             </div>
         </>
     )

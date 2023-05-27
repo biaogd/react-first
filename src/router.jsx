@@ -5,6 +5,7 @@ import {
 import Hello from './component/hello'
 import About from './component/about'
 import SideBar from './layout/SideBar'
+import MainContent from './layout/MainContent'
 
 const router = createBrowserRouter([
     {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/product/productmgmt/list",
-                element: <h1>产品列表</h1>
+                element: <h1>Hello</h1>
             }
         ]
     }

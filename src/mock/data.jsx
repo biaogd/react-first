@@ -82,4 +82,15 @@ const menuRoutes = [
     }
 ]
 
-export {menuData, menuRoutes}
+const languages = [
+    {
+        "label": "中文",
+        "key":"cn_zh",
+    },
+    {
+        "label": "英文",
+        "key": "en_us"
+    }
+]
+
+export {menuData, menuRoutes, languages}

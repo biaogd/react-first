@@ -1,12 +1,12 @@
 .sidebar{
-    width: 256px;
+    width: 230px;
     height: 100%;
     overflow-y: auto;
+    background-color: #001628;
 }
 
 #detail{
     flex: 1;
-    background-color: #ebecf0;
 }
 
 .main-icon{
@@ -14,4 +14,9 @@
     margin: 0 auto;
     text-align: center;
     padding: 5px 0;
+    color: #ffffff;
+}
+
+.head-bread-crumb{
+    padding: 10px 20px;
 }
